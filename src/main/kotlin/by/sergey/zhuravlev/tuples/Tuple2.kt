@@ -67,7 +67,6 @@ open class Tuple2<T1, T2> internal constructor(
   }
 
   override fun toString(): String {
-    return Tuples.tupleStringRepresentation(*toArray()).insert(0, '[').append(']')
-      .toString()
+    return toList().joinToString(prefix = "[", postfix = "]", separator = ",")
   }
 }

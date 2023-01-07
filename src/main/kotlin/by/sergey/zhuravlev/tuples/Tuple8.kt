@@ -1,6 +1,6 @@
 package by.sergey.zhuravlev.tuples
 
-class Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> internal constructor(
+open class Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> internal constructor(
   t1: T1,
   t2: T2,
   t3: T3,
@@ -42,7 +42,7 @@ class Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> internal constructor(
     return Tuple8(t1, t2, t3, t4, t5, t6, transform(t7), t8)
   }
 
-  fun <R> mapT8(transform: (t8: T8) -> R): Tuple8<T1, T2, T3, T4, T5, T6, T7, R> {
+  open fun <R> mapT8(transform: (t8: T8) -> R): Tuple8<T1, T2, T3, T4, T5, T6, T7, R> {
     return Tuple8(t1, t2, t3, t4, t5, t6, t7, transform(t8))
   }
 
