@@ -4,7 +4,7 @@
 ```gradle
 dependencies {
     // ...
-    implementation 'com.github.dergey:tuples:0.0.1'
+    implementation 'com.github.dergey:tuples:0.0.2'
 }
 ```
 
