@@ -2,7 +2,7 @@ package by.sergey.zhuravlev.tuples
 
 object Tuples {
 
-    fun <T> Array<T>.toTuple(): Tuple {
+    fun Array<*>.toTuple(): Tuple {
         require(this.size > 1) { "Too small array, size must be between 2 and 10" }
         when (this.size) {
             2 -> return of(
@@ -36,7 +36,52 @@ object Tuples {
         throw IllegalArgumentException("Too big array (${this.size}), size must be between 2 and 10")
     }
 
-    fun <T> List<T>.toTuple(): Tuple {
+    fun <T> Array<T>.toTuple2(): Tuple2<T, T> {
+        require(this.size == 2) { "Invalid array size, size must be equal 2" }
+        return of(this[0], this[1])
+    }
+
+    fun <T> Array<T>.toTuple3(): Tuple3<T, T, T> {
+        require(this.size == 3) { "Invalid array size, size must be equal 3" }
+        return of(this[0], this[1], this[2])
+    }
+
+    fun <T> Array<T>.toTuple4(): Tuple4<T, T, T, T> {
+        require(this.size == 4) { "Invalid array size, size must be equal 4" }
+        return of(this[0], this[1], this[2], this[3])
+    }
+
+    fun <T> Array<T>.toTuple5(): Tuple5<T, T, T, T, T> {
+        require(this.size == 5) { "Invalid array size, size must be equal 5" }
+        return of(this[0], this[1], this[2], this[3], this[4])
+    }
+
+    fun <T> Array<T>.toTuple6(): Tuple6<T, T, T, T, T, T> {
+        require(this.size == 6) { "Invalid array size, size must be equal 6" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5])
+    }
+
+    fun <T> Array<T>.toTuple7(): Tuple7<T, T, T, T, T, T, T> {
+        require(this.size == 7) { "Invalid array size, size must be equal 7" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6])
+    }
+
+    fun <T> Array<T>.toTuple8(): Tuple8<T, T, T, T, T, T, T, T> {
+        require(this.size == 8) { "Invalid array size, size must be equal 8" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7])
+    }
+
+    fun <T> Array<T>.toTuple9(): Tuple9<T, T, T, T, T, T, T, T, T> {
+        require(this.size == 9) { "Invalid array size, size must be equal 9" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7], this[8])
+    }
+
+    fun <T> Array<T>.toTuple10(): Tuple10<T, T, T, T, T, T, T, T, T, T> {
+        require(this.size == 10) { "Invalid array size, size must be equal 10" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7], this[8], this[9])
+    }
+
+    fun List<*>.toTuple(): Tuple {
         require(this.size > 1) { "Too small list, size must be between 2 and 10" }
         when (this.size) {
             2 -> return of(
@@ -68,6 +113,51 @@ object Tuples {
             )
         }
         throw IllegalArgumentException("Too big list (${this.size}), size must be between 2 and 10")
+    }
+
+    fun <T> List<T>.toTuple2(): Tuple2<T, T> {
+        require(this.size == 2) { "Invalid list size, size must be equal 2" }
+        return of(this[0], this[1])
+    }
+
+    fun <T> List<T>.toTuple3(): Tuple3<T, T, T> {
+        require(this.size == 3) { "Invalid list size, size must be equal 3" }
+        return of(this[0], this[1], this[2])
+    }
+
+    fun <T> List<T>.toTuple4(): Tuple4<T, T, T, T> {
+        require(this.size == 4) { "Invalid list size, size must be equal 4" }
+        return of(this[0], this[1], this[2], this[3])
+    }
+
+    fun <T> List<T>.toTuple5(): Tuple5<T, T, T, T, T> {
+        require(this.size == 5) { "Invalid list size, size must be equal 5" }
+        return of(this[0], this[1], this[2], this[3], this[4])
+    }
+
+    fun <T> List<T>.toTuple6(): Tuple6<T, T, T, T, T, T> {
+        require(this.size == 6) { "Invalid list size, size must be equal 6" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5])
+    }
+
+    fun <T> List<T>.toTuple7(): Tuple7<T, T, T, T, T, T, T> {
+        require(this.size == 7) { "Invalid list size, size must be equal 7" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6])
+    }
+
+    fun <T> List<T>.toTuple8(): Tuple8<T, T, T, T, T, T, T, T> {
+        require(this.size == 8) { "Invalid list size, size must be equal 8" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7])
+    }
+
+    fun <T> List<T>.toTuple9(): Tuple9<T, T, T, T, T, T, T, T, T> {
+        require(this.size == 9) { "Invalid list size, size must be equal 9" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7], this[8])
+    }
+
+    fun <T> List<T>.toTuple10(): Tuple10<T, T, T, T, T, T, T, T, T, T> {
+        require(this.size == 10) { "Invalid list size, size must be equal 10" }
+        return of(this[0], this[1], this[2], this[3], this[4], this[5], this[6], this[7], this[8], this[9])
     }
 
     fun <T1, T2> of(
